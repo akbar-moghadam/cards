@@ -1,0 +1,125 @@
+@import "media";
+@import "mix";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+%disply{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section{
+@extend %disply;
+width: 100%;
+height: 100%;
+
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+    background: #444f5a;
+    background: linear-gradient(326deg,#444f5a 0%, #52616b 80%);
+    background: -webkit-linear-gradient(326deg,#444f5a 0%, #52616b 80%);
+    background: -moz-linear-gradient(326deg,#444f5a 0%, #52616b 80%);
+    @include phone{
+        grid-template-columns: 1fr;
+        height: 90%;
+    }
+    
+    
+}
+.card1{
+    @extend %disply;
+    border-radius: 10px;
+    height: 90%;
+    width: 80%;
+    margin: 1rem 2rem;
+    @include shadow(1px,1px,20px,1px,rgb(51, 50, 50),true);
+    
+
+    .items{
+        @extend %disply;
+        justify-content: space-around;
+        flex-direction: column;
+        background-color:rgb(144, 143, 145);
+        height: 85%;
+        width: 80%;
+        border-radius: 5px;
+        position: relative;
+        @include shadow(1px,1px,20px,5px,rgb(27, 27, 27),false);
+        margin: 10px;
+        padding: 10px;
+        transition: all 0.5s ease-in;
+        
+        &:hover{
+            transform: translateY(-20px);
+            opacity: 0.8;
+            @include shadow(1px,183px,103px,-56px,rgb(0, 0, 0),false);
+        }
+       
+        @include tablet{
+            &:hover{
+                transform: translateY(-10px);
+            }
+        }
+        .span{
+            @extend %disply;
+            width: 100%;
+            padding: 1rem;
+            margin-top: calc(3vw - 10px);
+           color: khaki;
+           
+            
+            span{
+                font-size: clamp(22px,3vw,26px);
+                text-align: center;
+                font-weight: 600;
+            }
+        }
+        .p{
+            width: 100%;
+            padding: 1rem;
+            margin-top: auto;
+           
+            
+            p{
+                font-size: clamp(12px,3vw,16px);
+            }
+        }
+        .button{
+            width: 100%;
+            padding: 1rem;
+            margin: 1rem 0;
+            @extend %disply;
+            
+           
+            
+            button{
+                font-size: clamp(16px,1vw,20px);
+                height: 3rem;
+                width: 7rem;
+                border: none;
+                border-radius: 15px;
+                border-bottom: 3px solid rgb(150, 121, 26);
+                cursor: pointer;
+                background: none;
+                @include shadow(0,20px,30px,-20px,rgb(150, 121, 26),false);
+                transition: all 0.5s ease;
+                &:hover{
+                    background: #f0e68c;
+                    background: linear-gradient(180deg,#f0e68c 0%, #ffffff 80%);
+                    width: 9rem;
+                }
+            }
+        }
+       
+    }
+}

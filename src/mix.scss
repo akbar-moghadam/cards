@@ -1,0 +1,12 @@
+$inset:"inset";
+@mixin  shadow($h,$w,$b,$s,$color,$in-set) {
+    @if ($in-set == false){
+        box-shadow: $h $w $b $s $color ;
+        -webkit-box-shadow:  $h $w $b $s $color ;
+        -moz-box-shadow: $h $w $b $s $color ;
+    } @else {
+        box-shadow: $h $w $b $s $color #{$inset};
+        -webkit-box-shadow: $h $w $b $s $color #{$inset} ;
+        -moz-box-shadow: $h $w $b $s $color #{$inset} ;
+    }
+}
