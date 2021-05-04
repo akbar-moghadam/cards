@@ -1,5 +1,5 @@
 import React from 'react'
-
+import '../style/App.scss';
 const Card3 = () => {
     return (
         <div className="card1">

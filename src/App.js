@@ -2,7 +2,7 @@ import React from 'react'
 import Card1 from './components/Card1';
 import Card2 from './components/Card2';
 import Card3 from './components/Card3';
-import './App.scss';
+import './style/App.scss';
 
 function App() {
   return (
